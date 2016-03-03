@@ -2,6 +2,8 @@
 
 This is a collection of tests for benchmarking variable-column schema. The use
 case is storage of spreadsheets, where the columns are defined at runtime.
+Although the columns are variable, the data is not sparse: every cell has a
+value.
 
 To run the tests, start a new test container:
 

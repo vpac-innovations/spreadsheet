@@ -104,3 +104,5 @@ select create_sheet('PAD7', 8, 10000);
 select create_sheet('sixteen', 16, 10000);
 select create_sheet('PAD8', 8, 10000);
 select create_sheet('PAD9', 8, 10000);
+
+VACUUM ANALYZE;

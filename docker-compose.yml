@@ -1,6 +1,6 @@
 pg_test:
     image: postgres:9
-    command: sh -c "psql $$CONN"
+    command: sh -c "echo 'Allowing DB to warm up' && sleep 3 && psql $$CONN"
     environment:
         - CONN=postgresql://postgres@postgres/postgres
     links:
