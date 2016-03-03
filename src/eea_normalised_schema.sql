@@ -21,46 +21,53 @@ CREATE TABLE attribute (
     name text NOT NULL,
     CONSTRAINT entry_sheet_fk FOREIGN KEY (sheet_id) REFERENCES sheet (id)
 );
+CREATE INDEX ON attribute (sheet_id);
 
 CREATE TABLE entry (
     id UUID PRIMARY KEY NOT NULL,
+    seq int NOT NULL,
     sheet_id UUID NOT NULL,
     area real NOT NULL,
     CONSTRAINT entry_sheet_fk FOREIGN KEY (sheet_id) REFERENCES sheet (id)
 );
+CREATE INDEX ON entry (sheet_id);
 
 CREATE TABLE cell (
-    sheet_id UUID NOT NULL,
     attribute_id UUID NOT NULL,
     entry_id UUID NOT NULL,
     value integer,
-    CONSTRAINT entry_sheet_fk FOREIGN KEY (sheet_id) REFERENCES sheet (id),
     CONSTRAINT cell_attribute_fk FOREIGN KEY (attribute_id) REFERENCES attribute (id),
     CONSTRAINT cell_entry_fk FOREIGN KEY (entry_id) REFERENCES entry (id)
 );
-
--- CREATE INDEX
+-- Support filtering like "A > X"
+CREATE INDEX ON cell (attribute_id, value);
+-- Support joining with entry (rows)
+CREATE INDEX ON cell (entry_id);
 
 CREATE FUNCTION create_sheet (name text, width int, height int)
-RETURNS void
+RETURNS int
 AS $$
     DECLARE
         sid UUID;
         cats text[];
         aid UUID;
     BEGIN
-        cats := ARRAY['foo', 'bar', 'baz',
+        cats := ARRAY[
+            'foo', 'bar', 'baz',
             'qux', 'quux', 'corge',
             'grault', 'garply',
-            'waldo', 'fred'];
+            'waldo', 'fred',
+            'plugh', 'xyzzy', 'thud',
+            'wibble', 'wobble', 'wubble'];
 
         INSERT INTO sheet
-            VALUES (uuid_generate_v4(), 'sheet', width)
+            VALUES (uuid_generate_v4(), name, width)
             RETURNING id INTO sid;
 
         FOR j IN 1..height LOOP
             INSERT INTO entry VALUES (
                 uuid_generate_v4(),
+                j,
                 sid,
                 random() * 1000);
         END LOOP;
@@ -71,14 +78,29 @@ AS $$
                 RETURNING id INTO aid;
 
             INSERT INTO cell
-                SELECT sid, aid, e.id, (random() * 100)::int
+                SELECT aid, e.id, (random() * 30)::int
                 FROM entry AS e
                 WHERE e.sheet_id = sid;
         END LOOP;
+
+        RETURN width * height;
     END;
 $$ LANGUAGE plpgsql;
 
 
 -- Populate
 
-select create_sheet('sheet', 3, 1000);
+select create_sheet('PAD0', 8, 10000);
+select create_sheet('PAD1', 8, 10000);
+select create_sheet('two', 2, 10000);
+select create_sheet('PAD2', 8, 10000);
+select create_sheet('PAD3', 8, 10000);
+select create_sheet('four', 4, 10000);
+select create_sheet('PAD4', 8, 10000);
+select create_sheet('PAD5', 8, 10000);
+select create_sheet('eight', 8, 10000);
+select create_sheet('PAD6', 8, 10000);
+select create_sheet('PAD7', 8, 10000);
+select create_sheet('sixteen', 16, 10000);
+select create_sheet('PAD8', 8, 10000);
+select create_sheet('PAD9', 8, 10000);
