@@ -1,0 +1,12 @@
+pg_test:
+    image: postgres:9
+    command: sh -c "psql $$CONN"
+    environment:
+        - CONN=postgresql://postgres@postgres/postgres
+    links:
+        - postgres_test:postgres
+    volumes:
+        - ./src:/src
+
+postgres_test:
+    image: postgres:9
