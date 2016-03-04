@@ -36,7 +36,7 @@ CREATE INDEX ON cell (attribute_id, value);
 CREATE INDEX ON cell (entry_id);
 
 CREATE FUNCTION create_sheet (name text, width int, height int)
-RETURNS int
+RETURNS text
 AS $$
     DECLARE
         sid UUID;
@@ -74,7 +74,7 @@ AS $$
                 WHERE e.sheet_id = sid;
         END LOOP;
 
-        RETURN width * height;
+        RETURN name;
     END;
 $$ LANGUAGE plpgsql;
 
