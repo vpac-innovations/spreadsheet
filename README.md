@@ -59,7 +59,10 @@ pivot the data back into a spreadsheet.
 
 ![Entity diagram][eav-ed]
 
+See [discussion] for results.
+
 [`ARRAY`]: http://www.postgresql.org/docs/9.4/static/arrays.html
 [`crosstab`]: http://www.postgresql.org/docs/9.1/static/tablefunc.html
 [arr-ed]: doc/array.png
 [eav-ed]: doc/eav.png
+[discussion]: doc/discussion.md
