@@ -46,7 +46,7 @@ The array tests store all cells of a row as an [`ARRAY`] in a single row in the
 database. Thus a spreadsheet with 16 columns and 10,000 rows will require
 1 row in the `attribute` table and 10,000 rows in the `entry` table.
 
-[Entity diagram][arr-ed]
+![Entity diagram][arr-ed]
 
 ## EAV
 
@@ -57,9 +57,9 @@ an attribute. Thus a spreadsheet with 16 columns and 10,000 rows will require
 160,000 rows in the `cell` table. The table function [`crosstab`] is used to
 pivot the data back into a spreadsheet.
 
-[Entity diagram][eav-ed]
+![Entity diagram][eav-ed]
 
 [`ARRAY`]: http://www.postgresql.org/docs/9.4/static/arrays.html
 [`crosstab`]: http://www.postgresql.org/docs/9.1/static/tablefunc.html
-[arr-ed]: doc/array.svg
-[eav-ed]: doc/eav.svg
+[arr-ed]: doc/array.png
+[eav-ed]: doc/eav.png
