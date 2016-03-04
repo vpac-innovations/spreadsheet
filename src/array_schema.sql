@@ -1,7 +1,4 @@
-DROP TABLE IF EXISTS cell;
-DROP TABLE IF EXISTS attribute;
-DROP TABLE IF EXISTS entry;
-DROP TABLE IF EXISTS sheet;
+\ir drop_schema.sql
 
 CREATE TABLE sheet (
     id integer PRIMARY KEY,

@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS cell;
+DROP TABLE IF EXISTS attribute;
+DROP TABLE IF EXISTS entry;
+DROP TABLE IF EXISTS sheet;
+DROP FUNCTION IF EXISTS create_sheet(text, int, int);
+DROP EXTENSION IF EXISTS "tablefunc";
+DROP EXTENSION IF EXISTS "uuid-ossp";
+
+CREATE EXTENSION "tablefunc";
+CREATE EXTENSION "uuid-ossp";
