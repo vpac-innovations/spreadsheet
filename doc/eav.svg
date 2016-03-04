@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="schema1.svg">
+   sodipodi:docname="eav.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -32,7 +32,7 @@
      showgrid="false"
      showborder="false"
      inkscape:window-width="1920"
-     inkscape:window-height="2047"
+     inkscape:window-height="2046"
      inkscape:window-x="0"
      inkscape:window-y="55"
      inkscape:window-maximized="0">
@@ -70,7 +70,7 @@
     <rect
        y="522.36218"
        x="430"
-       height="150"
+       height="170"
        width="250"
        id="rect3839"
        style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
@@ -130,6 +130,7 @@
            width="178.5"
            id="rect3037" /></flowRegion><flowPara
          id="flowPara3041">id</flowPara><flowPara
+         id="flowPara3304">seq</flowPara><flowPara
          id="flowPara3149">sheet_id</flowPara><flowPara
          id="flowPara3145">area</flowPara></flowRoot>    <text
        xml:space="preserve"
@@ -232,7 +233,8 @@
            y="248.86218"
            style="font-size:20px" /></flowRegion><flowPara
          id="flowPara3036">id</flowPara><flowPara
-         id="flowPara3038">name</flowPara></flowRoot>    <path
+         id="flowPara3038">name</flowPara><flowPara
+         id="flowPara3302">width</flowPara></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 560,452.36218 0,70"
        id="path3044"
@@ -330,5 +332,62 @@
          x="-161.22037"
          id="tspan3159"
          sodipodi:role="line">*</tspan></text>
-  </g>
+    <flowRoot
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3286"
+       xml:space="preserve"
+       transform="translate(474.5,123.5522)"><flowRegion
+         id="flowRegion3288"><rect
+           style="font-size:20px"
+           y="248.86218"
+           x="85.5"
+           height="194.5"
+           width="178.5"
+           id="rect3290" /></flowRegion><flowPara
+         id="flowPara3292">UUID</flowPara><flowPara
+         id="flowPara3296">text</flowPara><flowPara
+         id="flowPara3300">int</flowPara></flowRoot>    <flowRoot
+       transform="translate(474.5,333.5522)"
+       xml:space="preserve"
+       id="flowRoot3306"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3308"><rect
+           id="rect3310"
+           width="178.5"
+           height="194.5"
+           x="85.5"
+           y="248.86218"
+           style="font-size:20px" /></flowRegion><flowPara
+         id="flowPara3312">UUID</flowPara><flowPara
+         id="flowPara3314">int</flowPara><flowPara
+         id="flowPara3316">UUID</flowPara><flowPara
+         id="flowPara3318">real</flowPara></flowRoot>    <flowRoot
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3320"
+       xml:space="preserve"
+       transform="translate(154.5,333.5522)"><flowRegion
+         id="flowRegion3322"><rect
+           style="font-size:20px"
+           y="248.86218"
+           x="85.5"
+           height="194.5"
+           width="178.5"
+           id="rect3324" /></flowRegion><flowPara
+         id="flowPara3326">UUID</flowPara><flowPara
+         id="flowPara3328">int</flowPara><flowPara
+         id="flowPara3330">UUID</flowPara></flowRoot>    <flowRoot
+       transform="translate(-205.5,333.5522)"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot3332"
+       xml:space="preserve"><flowRegion
+         id="flowRegion3334"><rect
+           style="font-size:20px"
+           y="248.86218"
+           x="85.5"
+           height="194.5"
+           width="178.5"
+           id="rect3336" /></flowRegion><flowPara
+         id="flowPara3342">UUID</flowPara><flowPara
+         id="flowPara3349">UUID</flowPara><flowPara
+         id="flowPara3351">text</flowPara></flowRoot>  </g>
 </svg>

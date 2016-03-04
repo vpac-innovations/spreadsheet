@@ -46,6 +46,8 @@ The array tests store all cells of a row as an [`ARRAY`] in a single row in the
 database. Thus a spreadsheet with 16 columns and 10,000 rows will require
 1 row in the `attribute` table and 10,000 rows in the `entry` table.
 
+[Entity diagram][arr-ed]
+
 ## EAV
 
 The EAV tests use a more normalised form, where each column is stored as an
@@ -59,4 +61,5 @@ pivot the data back into a spreadsheet.
 
 [`ARRAY`]: http://www.postgresql.org/docs/9.4/static/arrays.html
 [`crosstab`]: http://www.postgresql.org/docs/9.1/static/tablefunc.html
+[arr-ed]: doc/array.svg
 [eav-ed]: doc/eav.svg
