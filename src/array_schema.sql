@@ -24,6 +24,8 @@ AS $$
         cats text[];
         aid UUID;
     BEGIN
+        RAISE NOTICE 'Creating sheet % with % cells', name, width * height;
+
         cats := ARRAY[
             'foo', 'bar', 'baz',
             'qux', 'quux', 'corge',
@@ -74,3 +76,4 @@ select create_sheet('PAD8', 8, 10000);
 select create_sheet('PAD9', 8, 10000);
 
 VACUUM ANALYZE;
+\l+ postgres

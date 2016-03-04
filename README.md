@@ -14,9 +14,27 @@ sudo docker-compose run --rm pg_test
 Then at the `psql` prompt in the container:
 
 ```
+\timing on
 \i /src/eav_schema.sql
+
+\o /dev/null
 \i /src/eav_query.sql
 ```
+
+And then:
+
+```
+\timing on
+\i /src/array_schema.sql
+
+\o /dev/null
+\i /src/array_query.sql
+```
+
+The `\o` command is optional; it hides the query output so you can concentrate
+on the timings. Run `\o` with no arguments to let the query output be shown on
+the screen again. Note that some commands like `\l` will display no output
+until you stop the redirection.
 
 Edit the query file to your liking and run it again (e.g. to change which sheet
 to query). The SQL files are mounted as a Docker volume, so your changes should
